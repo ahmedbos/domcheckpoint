@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>julia.tn</title>
+    <style>
+      .header{background-color: #1F1D20;
+      display: flex;
+    flex-direction: column;
+    color: aliceblue;
+  }
+   body {background-color: blanchedalmond;}
+      
+  .header h1 {margin: auto;}
+      #product1, #product2 ,#product3 {
+        max-width: 1200px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+
+      .productlabel img {
+        height: 180px;
+        width: 180px;
+        border-radius: 20px;
+        margin: auto;
+      }
+      .about{display: grid;
+    grid-template-rows: 70% 30%;}
+
+      .units , .units2 , .units3 {
+        height: 50px;
+        min-width: 50px;
+        
+        font-size: 50px;
+        /*border-style: solid;
+        border: 4px;*/
+        text-align: center;
+        margin: auto;
+      }
+      .higherpart{display: grid;
+    grid-template-columns: 80% 20%;
+}
+      .lowerpart{display: grid;
+    grid-template-columns: 60% 20% 20%;
+justify-content: space-between;}
+.lowerpart div {margin: auto;}
+.productspecs p {font-size: 25px;
+margin: auto;}
+.delnfav{
+display: flex;
+flex-direction: row;
+justify-content: space-around;}
+.quant {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+       
+        margin: auto;
+      }
+      
+      /*.quant svg {
+        padding: 12px;
+        margin: auto;}*/
+        .priceperunit {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+        margin: auto;
+      }
+
+
+
+      .price {
+        height: 50px;
+    min-width: 50px;
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+      }
+      .currency {
+        height: 50px;
+    min-width: 50px;
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+      }
+      
+      
+      
+      
+        .add-btn ,.add-btn2 ,.add-btn3 {
+  background-color:  #D9A56B;
+   border-radius:15px ;
+   color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  margin: auto ;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+} 
+button{border-style: none ;
+background-color: white; height: 50px;margin: auto;cursor: pointer;
+}  
+/*.fav{border-radius: 100%;cursor: pointer;*/
+  
+  .substract-btn , .substract-btn2 , .substract-btn3 {
+    background-color:
+    #D9A56B; border-radius:15px ;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  margin: auto ;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}     
+
+#heart {fill:black;stroke:black;stroke-width:0.5px;
+fill-opacity:100%;
+border-style: none ;
+background-color: white; height: 50px;margin: auto;cursor: pointer;}
+#heart2 {fill:black;stroke:black;stroke-width:0.5px;
+fill-opacity:100%;
+border-style: none ;
+background-color: white; height: 50px;margin: auto;cursor: pointer;}
+#heart3 {fill:black;stroke:black;stroke-width:0.5px;
+fill-opacity:100%;
+border-style: none ;
+background-color: white; height: 50px;margin: auto;cursor: pointer;}
+
+.addition{ max-width: 1200px;
+        background-color: white;
+        display: flex;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+.addition div {display: flex;
+               flex-direction: row;               
+}
+
+ 
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>cart</h1>
+      <h2>please verifie the items that you are willing to buy</h2>
+    </div>
+    <!--product1-->
+    <div id="product1">
+      <div class="productimg">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="headlights"
+        />
+      </div>
+      <div class="about">
+        <div class="higherpart">
+            <div class="productspecs">
+                <h1>after market LED headligths</h1>
+                <p>adaptable headlights for supra mk4 with 150 meters ligth range 120 v 2.3 a with 3 different colors option and integrated blinkers</p>
+            </div>
+            <div class="delnfav">
+                <svg onclick="my2Function()" 
+                id="heart"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                
+                viewBox="0 0 512 512"
+                >
+                <path
+                d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+                />
+                </svg>
+                <button onclick="myFunction()" ><svg
+                class="trash"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-trash3"
+                viewBox="0 0 16 16"
+                >
+                <path
+                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                />
+                </svg></button>
+            </div>
+        </div>
+        <div class="lowerpart">
+          <h4>free shipping</h4>
+          <div class="priceperunit">
+            <h3 class="price">100</h3>
+            <h3 class="currency">$</h3>
+          </div>
+          <div class="quant">
+               <button class="add-btn">+</button>
+               <h3 class="units">3</h3>
+               <button class="substract-btn">-</button>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+    <!--product1-->
+    <!--product2-->
+    <div id="product2">
+      <div class="productimg">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxG9oRux0l4Kx6w17CcMBGFVymrpyTigOyJw&usqp=CAU"
+          alt="exhaust"
+        />
+      </div>
+      <div class="about">
+        <div class="higherpart">
+            <div class="productspecs">
+                <h1>akrapovic exhaust kit</h1>
+                <p>akrapovic exhaust kit for supra mk5</p>
+            </div>
+            <div class="delnfav">
+                <svg onclick="my2Function2()" 
+                id="heart2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                
+                viewBox="0 0 512 512"
+                >
+                <path
+                d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+                />
+                </svg>
+                <button onclick="myFunction2()" ><svg
+                class="trash"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-trash3"
+                viewBox="0 0 16 16"
+                >
+                <path
+                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                />
+                </svg></button>
+            </div>
+        </div>
+        <div class="lowerpart">
+          <h4>free shipping</h4>
+          <div class="priceperunit">
+            <h3 class="price">170</h3>
+            <h3 class="currency">$</h3>
+          </div>
+          <div class="quant">
+               <button class="add-btn2">+</button>
+               <h3 class="units2">3</h3>
+               <button class="substract-btn2">-</button>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+    <!--product2-->
+    <!--product3-->
+    <div id="product3">
+      <div class="productimg">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWV5GZFFFt6raNvlckhq2RaRo7-7lVB4SKJg&usqp=CAU"
+          alt="tail wing"
+        />
+      </div>
+      <div class="about">
+        <div class="higherpart">
+            <div class="productspecs">
+                <h1>after market tail wing</h1>
+                <p>adaptable tail wing for supra mk5 160*30cm , height of 25 cm, increases downforce ,complete carbon fiber materials</p>
+            </div>
+            <div class="delnfav">
+                <svg onclick="my2Function3()" 
+                id="heart3"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                
+                viewBox="0 0 512 512"
+                >
+                <path
+                d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+                />
+                </svg>
+                <button onclick="myFunction3()" ><svg
+                class="trash"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-trash3"
+                viewBox="0 0 16 16"
+                >
+                <path
+                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                />
+                </svg></button>
+            </div>
+        </div>
+        <div class="lowerpart">
+          <h4>free shipping</h4>
+          <div class="priceperunit">
+            <h3 class="price">230</h3>
+            <h3 class="currency">$</h3>
+          </div>
+          <div class="quant">
+               <button class="add-btn3">+</button>
+               <h3 class="units3">3</h3>
+               <button class="substract-btn3">-</button>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+    <!--product3-->
+    <!--total-->
+    <div class="addition">
+      <div> 
+        <h1>total price</h1>
+        <h2 class="total">500</h2>
+        <h2>$</h2>
+      </div>
+    </div>
+
+    <!--total-->
+
+
+
+    <script>
+      //delete
+      function myFunction() {
+        const element = document.getElementById("product1");
+        element.remove();
+        count=0;
+        updateDisplaytotal();
+      }
+      function myFunction2() {
+        const element = document.getElementById("product2");
+        element.remove();
+        count2=0;
+        updateDisplaytotal();
+
+      }
+      function myFunction3() {
+        const element = document.getElementById("product3");
+        element.remove();
+        count3=0;
+        updateDisplaytotal();
+      }
+      // favourite
+        function my2Function() {
+          let declaration = document.styleSheets[0].cssRules[19].style;
+          let propvalue = declaration.getPropertyValue("fill");
+          if (propvalue=="black"){ document.styleSheets[0].cssRules[19].style.fill = "red";}
+          else if (propvalue=="red"){ document.styleSheets[0].cssRules[19].style.fill = "black";}}
+          function my2Function2() {
+          let declaration = document.styleSheets[0].cssRules[20].style;
+          let propvalue = declaration.getPropertyValue("fill");
+          if (propvalue=="black"){ document.styleSheets[0].cssRules[20].style.fill = "red";}
+          else if (propvalue=="red"){ document.styleSheets[0].cssRules[20].style.fill = "black";}}
+          function my2Function3() {
+          let declaration = document.styleSheets[0].cssRules[21].style;
+          let propvalue = declaration.getPropertyValue("fill");
+          if (propvalue=="black"){ document.styleSheets[0].cssRules[21].style.fill = "red";}
+          else if (propvalue=="red"){ document.styleSheets[0].cssRules[21].style.fill = "black";}}
+      //total
+      
+      //counters
+        let counterDisplayElem = document.querySelector('.units');
+        let counterMinusElem = document.querySelector('.substract-btn');
+        let counterPlusElem = document.querySelector('.add-btn');
+        let count = 1;
+        updateDisplay();
+        
+        counterPlusElem.addEventListener("click",()=>{
+         if (count<28){ count++;}
+         else {count=1}
+        updateDisplay()
+        updateDisplaytotal();;
+        }) ;
+
+         counterMinusElem.addEventListener("click",()=>{
+          if (count>1){ count--;}
+         else {count=28}
+              updateDisplay();
+              updateDisplaytotal();
+            });
+
+          function updateDisplay(){
+          counterDisplayElem.innerHTML = count;
+         };
+
+         //2
+        let counterDisplayElem2 = document.querySelector('.units2');
+        let counterMinusElem2 = document.querySelector('.substract-btn2');
+        let counterPlusElem2 = document.querySelector('.add-btn2');
+        let count2 = 1;
+        updateDisplay2();
+        
+        counterPlusElem2.addEventListener("click",()=>{
+         if (count2<28){ count2 ++;}
+         else {count2=1}
+        updateDisplay2();
+        updateDisplaytotal();
+        }) ;
+
+         counterMinusElem2.addEventListener("click",()=>{
+          if (count2>1){ count2--;}
+         else {count2=28}
+              updateDisplay2();
+              updateDisplaytotal();
+            });
+
+          function updateDisplay2(){
+          counterDisplayElem2.innerHTML = count2;
+         };
+         //3
+        let counterDisplayElem3 = document.querySelector('.units3');
+        let counterMinusElem3 = document.querySelector('.substract-btn3');
+        let counterPlusElem3 = document.querySelector('.add-btn3');
+        let count3 = 1;
+        updateDisplay3();
+        
+        counterPlusElem3.addEventListener("click",()=>{
+         if (count3<28){ count3++;}
+         else {count3=1}
+        updateDisplay3();
+        updateDisplaytotal();
+        }) ;
+
+         counterMinusElem3.addEventListener("click",()=>{
+          if (count3>1){ count3--;}
+         else {count3=28}
+              updateDisplay3();
+              updateDisplaytotal();
+            });
+
+          function updateDisplay3(){
+          counterDisplayElem3.innerHTML = count3;
+         };
+         //totalprice
+         
+         function updateDisplaytotal(){
+          let totalcount = document.querySelector('.total');
+         let totalprice =500;
+         
+         totalprice = count*100 + count2*170 +count3*230;
+          totalcount.innerHTML =totalprice ; }
+
+        </script>
+
+  </body>
+</html>
